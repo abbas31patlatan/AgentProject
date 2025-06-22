@@ -1,0 +1,25 @@
+# File: docker-compose.yml
+version: "3.8"
+services:
+  agentproject:
+    build: .
+    container_name: agentproject
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - AGENTPROJECT_CONFIG=/home/agentuser/app/config.yml
+    volumes:
+      - ./:/home/agentuser/app:rw
+      - ./models/:/home/agentuser/app/models:rw
+      - ./memory.db:/home/agentuser/app/memory.db
+    ports:
+      - "8000:8000"    # for REST/GraphQL API (if enabled in core/api_orchestrator)
+      - "50051:50051"  # for gRPC endpoints
+    # Optional GPU support; uncomment if using nvidia-docker
+    # runtime: nvidia
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: [gpu]
+    command: ["agentproject", "run"]
