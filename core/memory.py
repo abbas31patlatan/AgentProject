@@ -39,11 +39,13 @@ class MemoryManager:
             """)
 
     def store_interaction(self, prompt: str, response: str):
+        """Persist a prompt/response pair in the database."""
+
         ts = int(datetime.now(timezone.utc).timestamp())
         with self._lock, self._conn:
             self._conn.execute(
                 "INSERT INTO interactions (timestamp, prompt, response) VALUES (?, ?, ?)",
-                (ts, prompt, response)
+                (ts, prompt, response),
             )
 
     def retrieve_context(self, limit_tokens: Optional[int] = None, max_interactions: int = 10) -> str:
@@ -64,12 +66,14 @@ class MemoryManager:
         return "\n".join(parts)
 
     def add_task(self, execute_at: datetime, payload: Dict[str, Any]):
+        """Schedule a task to be executed in the future."""
+
         ts = int(execute_at.replace(tzinfo=timezone.utc).timestamp())
         import json
         with self._lock, self._conn:
             self._conn.execute(
                 "INSERT INTO tasks (execute_at, payload, done) VALUES (?, ?, 0)",
-                (ts, json.dumps(payload))
+                (ts, json.dumps(payload)),
             )
 
     def get_pending_tasks(self) -> List[Dict[str, Any]]:
@@ -106,6 +110,18 @@ class MemoryManager:
                 (cutoff_ts,)
             )
 
+    def get_all_interactions(self, limit: int = 1000) -> List[Dict[str, Any]]:
+        """Son N etkileşimi kronolojik sırayla döndürür."""
+        with self._lock, self._conn:
+            cur = self._conn.execute(
+                "SELECT prompt, response FROM interactions ORDER BY timestamp DESC LIMIT ?",
+                (limit,),
+            )
+            rows = cur.fetchall()
+        return list(reversed([dict(row) for row in rows]))
+
     def close(self):
+        """Close the underlying database connection."""
+
         with self._lock:
             self._conn.close()
