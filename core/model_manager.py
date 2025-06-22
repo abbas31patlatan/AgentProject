@@ -2,7 +2,9 @@
 
 This module discovers models under the ``models`` directory and loads them on
 request. GGUF models are loaded with ``llama_cpp`` when available. The manager
-supports multiple frameworks and exposes a uniform ``infer`` method.
+supports multiple frameworks, exposes a uniform ``infer`` method and can
+hot-swap or remove models at runtime. Metadata is persisted to
+``models/metadata.json`` so newly added files are detected automatically.
 """
 
 from __future__ import annotations
@@ -187,6 +189,14 @@ class ModelManager:
         )
         return model
 
+    def get_model(self, name: str) -> BaseModel:
+        """Return a loaded model instance without triggering a load."""
+
+        with self._lock:
+            if name not in self._models:
+                raise KeyError(f"Model '{name}' not loaded")
+            return self._models[name]
+
     def unload_model(self, name: str) -> None:
         """Unload a previously loaded model if present."""
 
@@ -194,6 +204,18 @@ class ModelManager:
             if name in self._models and name != "default":
                 self._models.pop(name, None)
                 self.event_bus.publish_nowait("model.unloaded", name)
+
+    def remove_model(self, name: str) -> None:
+        """Delete model file and remove metadata entry."""
+
+        with self._lock:
+            meta = self._meta.pop(name, None)
+            self._models.pop(name, None)
+        if meta:
+            try:
+                Path(meta.path).unlink(missing_ok=True)
+            finally:
+                self.event_bus.publish_nowait("model.removed", name)
 
     def hot_swap(self, unload_name: str, load_name: str) -> BaseModel:
         """Unload ``unload_name`` and load ``load_name`` atomically."""

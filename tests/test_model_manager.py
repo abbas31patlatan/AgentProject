@@ -39,3 +39,16 @@ def test_hot_swap(tmp_path):
     assert 'demo' in mm.infer('b', 'demo')
     assert any(evt[0] == 'model.unloaded' and evt[1] == 'a' for evt in bus.events)
 
+
+def test_get_and_remove(tmp_path):
+    path = tmp_path / 'x.gguf'
+    path.write_text('x')
+    bus = DummyBus()
+    mm = ModelManager(models_dir=str(tmp_path), metadata_file=str(tmp_path / 'm.json'), event_bus=bus)
+    mm.discover_models(update=True)
+    mm.load_model('x')
+    assert mm.get_model('x')
+    mm.remove_model('x')
+    assert 'x' not in mm.list_models()
+    assert any(evt[0] == 'model.removed' and evt[1] == 'x' for evt in bus.events)
+
