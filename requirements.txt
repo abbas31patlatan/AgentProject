@@ -1,0 +1,11 @@
+autopep8
+httpx
+grpcio
+websockets
+cachetools
+aiobreaker
+pyautogui
+pynput
+sounddevice
+opencv-python
+requests
