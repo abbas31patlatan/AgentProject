@@ -9,3 +9,4 @@ pynput
 sounddevice
 opencv-python
 requests
+llama_cpp

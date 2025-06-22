@@ -7,8 +7,8 @@ This document briefly describes the main modules and how they interact.
   management.
 - **event_bus.py** – Async publish/subscribe event system.
 - **memory.py** – Persistent sqlite storage for interactions and tasks.
-- **model_manager.py** – Registers models used by the project and provides an
-  `infer` API.
+- **model_manager.py** – Discovers GGUF/ONNX/Torch models and loads them on
+  demand via a unified `infer` API.
 - **api_orchestrator.py** – Handles outbound API calls (REST, gRPC, websockets).
 - **plugin_loader.py** – Loads plugins from local or remote sources.
 - **context_stitcher.py** – Retrieves relevant context from memory for prompts.
