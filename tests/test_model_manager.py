@@ -1,0 +1,41 @@
+import asyncio
+from core.model_manager import ModelManager
+
+
+class DummyBus:
+    def __init__(self):
+        self.events = []
+
+    def publish_nowait(self, event, payload=None):
+        self.events.append((event, payload))
+
+
+def test_echo_model():
+    mm = ModelManager(event_bus=DummyBus())
+    result = mm.infer('default', 'hello')
+    assert 'hello' in result
+
+
+def test_discover_and_load(tmp_path):
+    model_file = tmp_path / 'sample.gguf'
+    model_file.write_text('dummy')
+    bus = DummyBus()
+    mm = ModelManager(models_dir=str(tmp_path), metadata_file=str(tmp_path / 'meta.json'), event_bus=bus)
+    mm.discover_models(update=True)
+    assert 'sample' in mm.list_models()
+    output = mm.infer('sample', 'hi there')
+    assert 'hi there' in output
+    assert any(evt[0] == 'model.loaded' and evt[1]['name'] == 'sample' for evt in bus.events)
+
+
+def test_hot_swap(tmp_path):
+    (tmp_path / 'a.gguf').write_text('a')
+    (tmp_path / 'b.gguf').write_text('b')
+    bus = DummyBus()
+    mm = ModelManager(models_dir=str(tmp_path), metadata_file=str(tmp_path / 'meta.json'), event_bus=bus)
+    mm.discover_models(update=True)
+    mm.load_model('a')
+    mm.hot_swap('a', 'b')
+    assert 'demo' in mm.infer('b', 'demo')
+    assert any(evt[0] == 'model.unloaded' and evt[1] == 'a' for evt in bus.events)
+

@@ -2,7 +2,6 @@
 
 import os
 import json
-import requests
 import hashlib
 from typing import Dict, Any, Optional, List
 
@@ -42,6 +41,8 @@ class ModelRegistry:
             for entry in data:
                 self._specs[entry["name"]] = ModelSpec(**entry)
         else:
+            import requests
+
             resp = requests.get(self.registry_url, timeout=30)
             resp.raise_for_status()
             data = resp.json()
@@ -69,6 +70,8 @@ class ModelRegistry:
         if os.path.exists(filename) and not overwrite:
             return filename
         # indir
+        import requests
+
         resp = requests.get(spec.url, stream=True, timeout=300)
         with open(filename, "wb") as f:
             for chunk in resp.iter_content(chunk_size=65536):
