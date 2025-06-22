@@ -28,6 +28,17 @@ def test_discover_and_load(tmp_path):
     assert any(evt[0] == 'model.loaded' and evt[1]['name'] == 'sample' for evt in bus.events)
 
 
+def test_onnx_and_torch(tmp_path):
+    (tmp_path / 'm.onnx').write_text('d')
+    (tmp_path / 'n.pt').write_text('d')
+    bus = DummyBus()
+    mm = ModelManager(models_dir=str(tmp_path), metadata_file=str(tmp_path / 'meta.json'), event_bus=bus)
+    mm.discover_models(update=True)
+    assert 'm' in mm.list_models() and 'n' in mm.list_models()
+    assert 'ONNX_DUMMY' in mm.infer('m', 'hi')
+    assert 'TORCH_DUMMY' in mm.infer('n', 'hi')
+
+
 def test_hot_swap(tmp_path):
     (tmp_path / 'a.gguf').write_text('a')
     (tmp_path / 'b.gguf').write_text('b')

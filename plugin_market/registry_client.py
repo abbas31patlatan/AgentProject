@@ -8,7 +8,6 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List
 
-import requests
 
 
 class RegistryClient:
@@ -20,6 +19,8 @@ class RegistryClient:
     def list_plugins(self, force: bool = False) -> List[Dict[str, Any]]:
         """Return plugin metadata list."""
 
+        import requests
+
         resp = requests.get(self.url + "/index.json", timeout=10)
         resp.raise_for_status()
         return resp.json()
@@ -28,6 +29,8 @@ class RegistryClient:
         """Download and extract a plugin archive into *target_dir*."""
 
         target_dir.mkdir(parents=True, exist_ok=True)
+        import requests
+
         resp = requests.get(f"{self.url}/{name}-{version}.zip", stream=True, timeout=30)
         resp.raise_for_status()
         tmp = target_dir / "plugin.zip"

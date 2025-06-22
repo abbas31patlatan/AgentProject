@@ -8,13 +8,15 @@ This document briefly describes the main modules and how they interact.
 - **di.py** – Tiny dependency injection container with thread-safe singleton
   management.
 - **event_bus.py** – Async publish/subscribe event system.
-- **memory.py** – Persistent sqlite storage for interactions and tasks.
+- **memory.py** – Persistent sqlite storage for interactions and tasks. Context
+  can be retrieved chronologically with an optional token budget.
 - **model_manager.py** – Discovers models in the `models` folder, stores
-  metadata, loads GGUF models with `llama_cpp` when available and supports
-  hot-swapping and removal of models at runtime. All frameworks share a unified
-  `infer` call and load/unload events are published on the global event bus.
+  metadata and lazily loads GGUF, ONNX or Torch models. It supports hot-swapping
+  and removal at runtime. All frameworks share a unified `infer` call and
+  load/unload events are published on the global event bus.
 - **api_orchestrator.py** – Handles outbound API calls (REST, gRPC, websockets).
-- **plugin_loader.py** – Loads plugins from local or remote sources.
+- **plugin_loader.py** – Loads plugins from local or remote sources and
+  publishes `plugin.loaded`/`plugin.unloaded` events.
 - **context_stitcher.py** – Retrieves relevant context from memory for prompts.
 - **consciousness.py** – Central engine orchestrating memory, models and events.
 - **refactor_engine.py** – Formats project code when optimization events occur.

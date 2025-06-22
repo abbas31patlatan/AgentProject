@@ -49,20 +49,21 @@ class MemoryManager:
             )
 
     def retrieve_context(self, limit_tokens: Optional[int] = None, max_interactions: int = 10) -> str:
-        """
-        Son konuşma/kod geçmişini döndürür.
-        """
+        """Return recent conversation in chronological order with optional token limit."""
         with self._lock, self._conn:
-            cur = self._conn.execute(
-                "SELECT prompt, response FROM interactions ORDER BY timestamp DESC LIMIT ?",
-                (max_interactions,)
-            )
+            cur = self._conn.execute("SELECT prompt, response FROM interactions ORDER BY timestamp DESC LIMIT ?", (max_interactions,))
             rows = cur.fetchall()
-        # kronolojik sıraya çevir
         parts = []
+        token_count = 0
         for row in reversed(rows):
-            parts.append(f"User: {row['prompt']}")
-            parts.append(f"AI: {row['response']}")
+            user = f"User: {row['prompt']}"
+            ai = f"AI: {row['response']}"
+            tokens = len(user.split()) + len(ai.split())
+            if limit_tokens is not None and token_count + tokens > limit_tokens:
+                break
+            parts.append(user)
+            parts.append(ai)
+            token_count += tokens
         return "\n".join(parts)
 
     def add_task(self, execute_at: datetime, payload: Dict[str, Any]):

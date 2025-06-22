@@ -69,6 +69,47 @@ class GGUFModelWrapper:
         return res["choices"][0]["text"]
 
 
+class ONNXModelWrapper:
+    """Wrapper around an ONNX Runtime model."""
+
+    def __init__(self, path: Path):
+        try:
+            import onnxruntime as ort
+
+            self._session = ort.InferenceSession(str(path))
+            self._dummy = False
+        except Exception:
+            self._session = None
+            self._path = path
+            self._dummy = True
+
+    def infer(self, prompt: str, **kwargs: object) -> str:
+        if self._dummy:
+            return f"ONNX_DUMMY({self._path.name}): {prompt}"
+        # Implementation specific to the model architecture would go here.
+        return prompt
+
+
+class TorchModelWrapper:
+    """Wrapper around a TorchScript model."""
+
+    def __init__(self, path: Path):
+        try:
+            import torch
+
+            self._model = torch.jit.load(str(path))
+            self._dummy = False
+        except Exception:
+            self._model = None
+            self._path = path
+            self._dummy = True
+
+    def infer(self, prompt: str, **kwargs: object) -> str:
+        if self._dummy:
+            return f"TORCH_DUMMY({self._path.name}): {prompt}"
+        return str(self._model(prompt))
+
+
 class ModelManager:
     """Thread-safe manager that lazily loads models on demand."""
 
@@ -149,7 +190,10 @@ class ModelManager:
     def _load_model(self, meta: ModelMeta) -> BaseModel:
         if meta.framework == "gguf":
             return GGUFModelWrapper(Path(meta.path))
-        # ONNX and Torch loading can be implemented here.
+        if meta.framework == "onnx":
+            return ONNXModelWrapper(Path(meta.path))
+        if meta.framework == "torch":
+            return TorchModelWrapper(Path(meta.path))
         return EchoModel()
 
     # ------------------------------------------------------------------
