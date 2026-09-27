@@ -6,6 +6,10 @@ on:
       - game-agent-bridge
     paths:
       - game_bridge/requests/queue.json
+  pull_request:
+    paths:
+      - game_bridge/**
+      - .github/workflows/game-agent-bridge.yml
   workflow_dispatch:
     inputs:
       request_path:
@@ -17,7 +21,19 @@ permissions:
   contents: write
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Python and game profiles
+        run: |
+          python3 -m py_compile game_bridge/bridge/fetch_worker.py game_bridge/game_driver.py game_bridge/validate_profiles.py
+          python3 game_bridge/validate_profiles.py
+
   fetch:
+    if: github.event_name != 'pull_request'
+    needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
@@ -35,14 +51,17 @@ jobs:
             game-agent-bridge-${{ runner.os }}-
 
       - name: Process request queue
+        id: bridge
+        continue-on-error: true
         run: python3 game_bridge/bridge/fetch_worker.py "$REQUEST_PATH"
 
       - name: Upload response payloads
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: game-agent-bridge-output-${{ github.run_id }}
           path: game_bridge/outbox/
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 14
 
       - name: Save updated bridge cache
@@ -53,11 +72,33 @@ jobs:
           key: game-agent-bridge-${{ runner.os }}-${{ github.run_id }}
 
       - name: Publish compact response index
+        if: always()
         run: |
-          git config user.name "game-agent-bridge[bot]"
-          git config user.email "game-agent-bridge@users.noreply.github.com"
-          git add game_bridge/responses/latest.json
-          if ! git diff --cached --quiet; then
-            git commit -m "bridge: publish response for run ${GITHUB_RUN_ID}"
-            git push
+          if [ -f game_bridge/responses/latest.json ]; then
+            git config user.name "game-agent-bridge[bot]"
+            git config user.email "game-agent-bridge@users.noreply.github.com"
+            git add game_bridge/responses/latest.json
+            if ! git diff --cached --quiet; then
+              git commit -m "bridge: publish response for run ${GITHUB_RUN_ID}"
+              git push
+            fi
           fi
+
+      - name: Fail if bridge requests failed
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("game_bridge/responses/latest.json")
+          if not path.exists():
+              raise SystemExit("bridge did not produce latest.json")
+
+          data = json.loads(path.read_text("utf-8"))
+          failed = [r for r in data.get("results", []) if not r.get("ok")]
+          if failed:
+              for result in failed:
+                  print(result.get("id"), result.get("error", "unknown error"))
+              raise SystemExit(f"{len(failed)} bridge request(s) failed")
+          PY
