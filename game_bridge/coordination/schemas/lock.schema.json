@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["protocol_version", "resource", "resource_slug", "lease_id", "owner_agent_id", "acquired_at", "expires_at", "generation"],
+  "properties": {
+    "protocol_version": {"const": 1},
+    "resource": {"type": "string"},
+    "resource_slug": {"type": "string"},
+    "lease_id": {"type": "string"},
+    "owner_agent_id": {"type": "string"},
+    "acquired_at": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "generation": {"type": "integer", "minimum": 1},
+    "purpose": {"type": "string"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentproject.local/schemas/agent-profile.schema.json",
+  "type": "object",
+  "required": ["protocol_version", "agent_id", "display_name", "agent_kind", "model", "created_at", "capabilities"],
+  "properties": {
+    "protocol_version": {"const": 1},
+    "agent_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,63}$"},
+    "display_name": {"type": "string", "minLength": 1},
+    "agent_kind": {"type": "string"},
+    "model": {"type": "string"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "capabilities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": true
+}

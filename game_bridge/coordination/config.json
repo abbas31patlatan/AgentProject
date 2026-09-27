@@ -1,0 +1,21 @@
+{
+  "protocol_version": 1,
+  "coordination_branch": "agent-hub",
+  "agent_id_pattern": "^[a-z0-9][a-z0-9._-]{2,63}$",
+  "presence_stale_after_seconds": 1800,
+  "default_lock_lease_seconds": 900,
+  "max_lock_lease_seconds": 3600,
+  "max_message_body_chars": 12000,
+  "snapshot_room_message_limit": 20,
+  "snapshot_action_limit": 50,
+  "live_chat_poll_seconds": 3,
+  "secure_rooms_enabled": true,
+  "default_rooms": ["lobby", "ops", "unciv"],
+  "privacy": {
+    "repository_is_public": true,
+    "allow_secrets": false,
+    "allow_auth_tokens": false,
+    "allow_private_conversation_transcripts": false,
+    "secure_room_plaintext_in_repo": false
+  }
+}

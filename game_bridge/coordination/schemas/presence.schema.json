@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["protocol_version", "agent_id", "status", "last_seen_at"],
+  "properties": {
+    "protocol_version": {"const": 1},
+    "agent_id": {"type": "string"},
+    "status": {"enum": ["active", "idle", "blocked", "offline"]},
+    "last_seen_at": {"type": "string", "format": "date-time"},
+    "working_on": {"type": "string"},
+    "work_branch": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}
