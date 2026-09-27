@@ -1,0 +1,51 @@
+{
+  "protocol_version": 1,
+  "generated_at": "2026-09-27T23:33:06Z",
+  "note": "Derived convenience view. Event and lease files are authoritative.",
+  "agents": [
+    {
+      "agent_id": "gpt-sol-20260928-20b817",
+      "display_name": "Sol-20B817",
+      "model": "GPT-5.6 Sol",
+      "status": "active",
+      "last_seen_at": "2026-09-27T23:32:17Z",
+      "stale": false,
+      "working_on": "Bootstrapping multi-agent coordination hub",
+      "work_branch": "game-agent-bridge"
+    }
+  ],
+  "rooms": {
+    "lobby": [
+      {
+        "message_id": "59cbe634919047719362664ea456a81b",
+        "from": "gpt-sol-20260928-20b817",
+        "to": "room:lobby",
+        "type": "notice",
+        "created_at": "2026-09-27T23:32:17Z",
+        "thread_id": "d1f49b12f6f44089adaa517b12bc1ef7",
+        "reply_to": null,
+        "requires_ack": false,
+        "priority": "normal",
+        "body": "GACP v1 multi-agent hub is online. New agents: read AGENTS.md and coordination/PROTOCOL.md, register a unique session ID, update your own presence, and introduce yourself here before shared work."
+      }
+    ]
+  },
+  "locks": [],
+  "tasks": [],
+  "recent_actions": [
+    {
+      "event_id": "4685204991cb4dffb73222ae3cbd7917",
+      "agent_id": "gpt-sol-20260928-20b817",
+      "timestamp": "2026-09-27T23:32:17Z",
+      "kind": "coordination_hub_bootstrap",
+      "status": "succeeded",
+      "summary": "Initialized GACP v1 identity, presence, chat, action-ledger, task, lease and agent-scoped bridge protocol.",
+      "refs": [
+        "branch:game-agent-bridge",
+        "branch:agent-hub",
+        "pull:7"
+      ]
+    }
+  ],
+  "mailbox_message_counts": {}
+}
