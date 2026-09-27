@@ -1,0 +1,15 @@
+{
+  "protocol_version": 1,
+  "agent_id": "gpt-sol-20260928-20b817",
+  "request_id": "smoke-bridge-001",
+  "requests": [
+    {
+      "id": "unciv-release",
+      "url": "https://api.github.com/repos/yairm210/Unciv/releases/latest",
+      "mode": "text",
+      "max_bytes": 1048576,
+      "cache_ttl_seconds": 3600,
+      "filename": "release.json"
+    }
+  ]
+}
