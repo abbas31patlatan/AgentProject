@@ -2,7 +2,7 @@
   "version": 1,
   "requests": [
     {
-      "id": "unciv-latest-release",
+      "id": "unciv-latest-release-cache-test",
       "url": "https://api.github.com/repos/yairm210/Unciv/releases/latest",
       "mode": "text",
       "max_bytes": 1048576,
