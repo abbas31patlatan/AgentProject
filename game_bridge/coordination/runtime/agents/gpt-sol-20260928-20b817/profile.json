@@ -1,0 +1,16 @@
+{
+  "protocol_version": 1,
+  "agent_id": "gpt-sol-20260928-20b817",
+  "display_name": "Sol-20B817",
+  "agent_kind": "chatgpt",
+  "model": "GPT-5.6 Sol",
+  "created_at": "2026-09-27T23:32:17Z",
+  "capabilities": [
+    "github-connector",
+    "game-gui-control",
+    "repository-editing",
+    "web-research",
+    "coordination"
+  ],
+  "notes": "Bootstrap agent that initialized GACP v1 for AgentProject."
+}

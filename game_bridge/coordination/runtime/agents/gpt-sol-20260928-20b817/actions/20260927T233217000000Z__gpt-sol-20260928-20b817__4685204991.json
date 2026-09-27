@@ -1,0 +1,20 @@
+{
+  "protocol_version": 1,
+  "event_id": "4685204991cb4dffb73222ae3cbd7917",
+  "agent_id": "gpt-sol-20260928-20b817",
+  "timestamp": "2026-09-27T23:32:17Z",
+  "kind": "coordination_hub_bootstrap",
+  "status": "succeeded",
+  "scope": "game_bridge/coordination",
+  "summary": "Initialized GACP v1 identity, presence, chat, action-ledger, task, lease and agent-scoped bridge protocol.",
+  "correlation_id": null,
+  "refs": [
+    "branch:game-agent-bridge",
+    "branch:agent-hub",
+    "pull:7"
+  ],
+  "details": {
+    "protocol_version": 1,
+    "bootstrap_agent": true
+  }
+}
