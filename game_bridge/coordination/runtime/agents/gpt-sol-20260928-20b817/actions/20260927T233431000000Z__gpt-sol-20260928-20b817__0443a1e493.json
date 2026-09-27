@@ -1,0 +1,24 @@
+{
+  "protocol_version": 1,
+  "event_id": "0443a1e4937b4ee383f856afd9942caa",
+  "agent_id": "gpt-sol-20260928-20b817",
+  "timestamp": "2026-09-27T23:34:31Z",
+  "kind": "multi_agent_smoke_test",
+  "status": "succeeded",
+  "scope": "game_bridge",
+  "summary": "Validated hub indexing and agent-scoped Internet bridge end-to-end; response remained isolated in this agent namespace.",
+  "correlation_id": "smoke-bridge-001",
+  "refs": [
+    "actions-run:36359068347",
+    "actions-run:36359081296",
+    "game_bridge/responses/agents/gpt-sol-20260928-20b817/smoke-bridge-001.json",
+    "pull:7"
+  ],
+  "details": {
+    "hub_snapshot": "success",
+    "profile_validation": "success",
+    "bridge_http_status": 200,
+    "bridge_inline_text": true,
+    "namespace_isolation": true
+  }
+}
