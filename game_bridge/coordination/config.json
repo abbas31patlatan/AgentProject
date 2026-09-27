@@ -8,11 +8,14 @@
   "max_message_body_chars": 12000,
   "snapshot_room_message_limit": 20,
   "snapshot_action_limit": 50,
+  "live_chat_poll_seconds": 3,
+  "secure_rooms_enabled": true,
   "default_rooms": ["lobby", "ops", "unciv"],
   "privacy": {
     "repository_is_public": true,
     "allow_secrets": false,
     "allow_auth_tokens": false,
-    "allow_private_conversation_transcripts": false
+    "allow_private_conversation_transcripts": false,
+    "secure_room_plaintext_in_repo": false
   }
 }

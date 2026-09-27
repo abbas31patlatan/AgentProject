@@ -2,10 +2,7 @@ name: Game Agent Bridge
 
 on:
   push:
-    branches:
-      - main
-      - game-agent-bridge
-      - agent-hub
+    branches: [main, game-agent-bridge, agent-hub]
     paths:
       - game_bridge/requests/inbox/**/*.json
       - game_bridge/requests/queue.json
@@ -34,12 +31,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Check Python, game profiles and coordination protocol
+      - name: Install coordination crypto dependency
+        run: python3 -m pip install -r game_bridge/coordination/requirements.txt
+      - name: Check game and coordination protocol
         run: |
-          python3 -m py_compile             game_bridge/bridge/fetch_worker.py             game_bridge/game_driver.py             game_bridge/validate_profiles.py             game_bridge/coordination/agentctl.py             game_bridge/coordination/build_snapshot.py             game_bridge/coordination/validate_runtime.py
+          python3 -m py_compile game_bridge/bridge/fetch_worker.py game_bridge/game_driver.py game_bridge/validate_profiles.py game_bridge/coordination/agentctl.py game_bridge/coordination/build_snapshot.py game_bridge/coordination/validate_runtime.py game_bridge/coordination/secure_chat.py game_bridge/coordination/secure_chat_selftest.py
           python3 game_bridge/validate_profiles.py
           python3 game_bridge/coordination/validate_runtime.py
+          python3 game_bridge/coordination/secure_chat_selftest.py
 
   fetch:
     if: github.event_name != 'pull_request'
@@ -47,11 +46,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      REQUEST_PATH: ${{ github.event_name == 'workflow_dispatch' && inputs.request_path || (github.event_name == 'push' && 'game_bridge/requests/inbox' || 'game_bridge/requests/inbox') }}
-
+      REQUEST_PATH: ${{ github.event_name == 'workflow_dispatch' && inputs.request_path || 'game_bridge/requests/inbox' }}
     steps:
       - uses: actions/checkout@v4
-
       - name: Restore bridge cache
         uses: actions/cache/restore@v4
         with:
@@ -59,7 +56,6 @@ jobs:
           key: game-agent-bridge-${{ runner.os }}-${{ github.run_id }}
           restore-keys: |
             game-agent-bridge-${{ runner.os }}-
-
       - name: Process agent-scoped request inbox
         id: bridge
         continue-on-error: true
@@ -69,7 +65,6 @@ jobs:
           else
             python3 game_bridge/bridge/fetch_worker.py "$REQUEST_PATH"
           fi
-
       - name: Upload response payloads
         if: always()
         uses: actions/upload-artifact@v4
@@ -78,14 +73,12 @@ jobs:
           path: game_bridge/outbox/${{ github.run_id }}/
           if-no-files-found: warn
           retention-days: 14
-
       - name: Save updated bridge cache
         uses: actions/cache/save@v4
         if: always()
         with:
           path: .bridge-cache
           key: game-agent-bridge-${{ runner.os }}-${{ github.run_id }}
-
       - name: Publish response records
         if: always()
         run: |
@@ -96,7 +89,6 @@ jobs:
             git commit -m "bridge: publish responses for run ${GITHUB_RUN_ID}"
             git push
           fi
-
       - name: Fail if current bridge run failed
         if: always()
         run: |
@@ -104,8 +96,7 @@ jobs:
           python3 - <<'PY'
           import json, os
           from pathlib import Path
-          p = Path("game_bridge/outbox") / os.environ["GITHUB_RUN_ID"] / "run-summary.json"
-          d = json.loads(p.read_text("utf-8"))
-          if d.get("failed", 0):
-              raise SystemExit(f"{d['failed']} bridge request(s) failed")
+          p=Path("game_bridge/outbox")/os.environ["GITHUB_RUN_ID"]/"run-summary.json"
+          d=json.loads(p.read_text("utf-8"))
+          if d.get("failed",0): raise SystemExit(f"{d['failed']} bridge request(s) failed")
           PY

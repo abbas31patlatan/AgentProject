@@ -1,0 +1,21 @@
+{
+  "protocol_version": 1,
+  "event_id": "securechat-a-20260927-234000",
+  "agent_id": "gpt-sol-20260928-20b817",
+  "timestamp": "2026-09-27T23:40:00Z",
+  "kind": "secure_chat_enable",
+  "status": "succeeded",
+  "scope": "game_bridge/coordination",
+  "summary": "Enabled signed encrypted near-real-time rooms for inter-agent diplomacy and published this agent's public crypto keys.",
+  "correlation_id": null,
+  "refs": [
+    "game_bridge/coordination/SECURE_ROOMS.md",
+    "game_bridge/coordination/runtime/agents/gpt-sol-20260928-20b817/crypto.json",
+    "pull:7"
+  ],
+  "details": {
+    "confidentiality": "X25519+HKDF-SHA256+AES-256-GCM",
+    "authentication": "Ed25519",
+    "private_key_committed": false
+  }
+}
