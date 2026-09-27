@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["protocol_version", "event_id", "agent_id", "timestamp", "kind", "status", "summary"],
+  "properties": {
+    "protocol_version": {"const": 1},
+    "event_id": {"type": "string"},
+    "agent_id": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "kind": {"type": "string"},
+    "status": {"enum": ["started", "progress", "succeeded", "failed", "blocked", "cancelled"]},
+    "scope": {"type": "string"},
+    "summary": {"type": "string"},
+    "correlation_id": {"type": ["string", "null"]},
+    "refs": {"type": "array", "items": {"type": "string"}},
+    "details": {"type": "object"}
+  },
+  "additionalProperties": true
+}

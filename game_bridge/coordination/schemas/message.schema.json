@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["protocol_version", "message_id", "from", "to", "type", "created_at", "body"],
+  "properties": {
+    "protocol_version": {"const": 1},
+    "message_id": {"type": "string", "minLength": 8},
+    "from": {"type": "string"},
+    "to": {"type": "string"},
+    "type": {"enum": ["message", "request", "result", "handoff", "notice", "proposal"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "thread_id": {"type": ["string", "null"]},
+    "reply_to": {"type": ["string", "null"]},
+    "requires_ack": {"type": "boolean"},
+    "priority": {"enum": ["low", "normal", "high", "urgent"]},
+    "body": {"type": "string", "maxLength": 12000},
+    "refs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}
