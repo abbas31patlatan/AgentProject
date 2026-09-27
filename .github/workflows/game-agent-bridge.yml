@@ -1,0 +1,63 @@
+name: Game Agent Bridge
+
+on:
+  push:
+    branches:
+      - game-agent-bridge
+    paths:
+      - game_bridge/requests/queue.json
+  workflow_dispatch:
+    inputs:
+      request_path:
+        description: Queue file to process
+        required: false
+        default: game_bridge/requests/queue.json
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      REQUEST_PATH: ${{ inputs.request_path || 'game_bridge/requests/queue.json' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore bridge cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .bridge-cache
+          key: game-agent-bridge-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            game-agent-bridge-${{ runner.os }}-
+
+      - name: Process request queue
+        run: python3 game_bridge/bridge/fetch_worker.py "$REQUEST_PATH"
+
+      - name: Upload response payloads
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-agent-bridge-output-${{ github.run_id }}
+          path: game_bridge/outbox/
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Save updated bridge cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .bridge-cache
+          key: game-agent-bridge-${{ runner.os }}-${{ github.run_id }}
+
+      - name: Publish compact response index
+        run: |
+          git config user.name "game-agent-bridge[bot]"
+          git config user.email "game-agent-bridge@users.noreply.github.com"
+          git add game_bridge/responses/latest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "bridge: publish response for run ${GITHUB_RUN_ID}"
+            git push
+          fi

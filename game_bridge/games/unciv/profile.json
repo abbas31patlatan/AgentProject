@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "unciv",
+  "display_name": "Unciv",
+  "runtime": {
+    "kind": "desktop",
+    "requires_display": true,
+    "launch": {
+      "argv": ["java", "-jar", "Unciv.jar"],
+      "cwd": "${GAME_RUNTIME_ROOT}/unciv-runtime",
+      "env": {
+        "DISPLAY": ":99",
+        "LIBGL_ALWAYS_SOFTWARE": "1",
+        "HOME": "/tmp/xhome",
+        "XAUTHORITY": "/tmp/xhome/.Xauthority"
+      }
+    }
+  },
+  "observation": {
+    "methods": ["screenshot", "save_files"],
+    "screenshot_command": ["scrot", "${GAME_RUNTIME_ROOT}/unciv-current.png"],
+    "stable_after_seconds": 0.8
+  },
+  "control": {
+    "mode": "adapter",
+    "controller_command": ["python3", "${GAME_RUNTIME_ROOT}/unciv_ctl.py"],
+    "safe_pause": "before End Turn, with no unresolved mandatory popup"
+  },
+  "state": {
+    "turn_model": "turn_based",
+    "save_paths": [
+      "${GAME_RUNTIME_ROOT}/unciv-runtime/SaveFiles",
+      "${GAME_RUNTIME_ROOT}/unciv-runtime/GameSettings.json"
+    ],
+    "autosave": true
+  },
+  "confirmation": {
+    "required_for": [
+      "delete_save",
+      "overwrite_irreplaceable_save",
+      "real_money_purchase",
+      "account_or_external_social_action"
+    ]
+  },
+  "playbook": "PLAYBOOK.md"
+}

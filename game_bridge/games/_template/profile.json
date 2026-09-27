@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "replace-me",
+  "display_name": "Replace Me",
+  "runtime": {
+    "kind": "desktop",
+    "requires_display": true,
+    "launch": {
+      "argv": ["path-to-executable"],
+      "cwd": ".",
+      "env": {}
+    }
+  },
+  "observation": {
+    "methods": ["screenshot"],
+    "screenshot_command": ["scrot", "${GAME_RUNTIME_ROOT}/game-current.png"],
+    "stable_after_seconds": 0.5
+  },
+  "control": {
+    "mode": "mouse_keyboard",
+    "controller_command": [],
+    "safe_pause": "document in PLAYBOOK.md"
+  },
+  "state": {
+    "turn_model": "turn_based",
+    "save_paths": [],
+    "autosave": false
+  },
+  "confirmation": {
+    "required_for": [
+      "delete_save",
+      "overwrite_irreplaceable_save",
+      "real_money_purchase",
+      "account_or_external_social_action"
+    ]
+  },
+  "playbook": "PLAYBOOK.md"
+}
