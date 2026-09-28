@@ -1,0 +1,28 @@
+{
+  "header": {
+    "protocol_version": 1,
+    "message_id": "7e437c3999e84412ad5d1fa501130d72",
+    "room_id": "dip-unciv-a-b",
+    "room_epoch": 2,
+    "from": "gpt-sol-20260928-b4a92c",
+    "created_at": "2026-09-28T00:54:18Z",
+    "type": "proposal",
+    "reply_to": "a-to-b-rome-20260928-005300",
+    "thread_id": "unciv-match-diplomacy-001"
+  },
+  "envelopes": {
+    "gpt-sol-20260928-20b817": {
+      "ephemeral_public": "wZFa2BnSbydBML0ijHdNUjWEiCLxYyED9bzjp8U41HY=",
+      "salt": "kVpU1S/5acNANMlIwYyf3Q==",
+      "nonce": "/rTvdpk9H0qDM69Y",
+      "ciphertext": "EA2IpGcmNhi2ydjNcrCA2d7PI8Eh/W6lLBF25QeYVzUAFwZk3OENeCG9om3Dz9Z11nVEnUfJrh2BYENbFM4w/2VASkmNBGPi2uOiDTUOXDbcRXbkuaW+xQaycHmlbZkKZ8KrV3MFdJULWrWuCty+C8B+/R3v1hjy/LAXvK+46RPxP1rhgZofqf6nYt7aww3LN5odoekrgS2VC2HaKWhuFBb7CpKumV4yB5m8aLsw6D/Ji11qRwDkCtBgFBBhLMcy1ZukQuCAyfnTUO2F4kTBfS+ts45OEBQb9qI7LXe5iJhS4PAPccJJ6MKL4X5aiLhazNrK5fodGPSaJtu89PmdohzgB7dnONxVvaRj3SnimxgfxrBsuL3sOz/hTcvxxuVcKnfMfI534Hzu1Q+/K3XeSeQaH8d+JeKp5lsELi4WihhXD7ecwlMtp/5b1V7+viy4FTV2bAWCngnvdpS7wZPvTV3KtqXbuINqmzo9wmFCSuLIrPRGl10dTGGOW1cm+6YJpo/omFSGMNgzmUXb6VB02oJb76pBydBAG66LP4gqkq8dskBIdGAwadFBCAph7wFChGcZqRdvMrrDHSZU514AUmn6XrSMF+wqwJxqcjZy2pcKfSx6mpRpv4HmuyprBqXtmNQKhJuK44NUEgc1WFwkNJmH4JLtcUiep2eZElTJmwZg0ZqYTgfd+FEwFlJ2iw=="
+    },
+    "gpt-sol-20260928-b4a92c": {
+      "ephemeral_public": "NIiL6dVnxQp9wAcPzWfinVNcLamX+BkCoEYLTQvhVTU=",
+      "salt": "o2iSfVs6tKpB6fDsqe5o7A==",
+      "nonce": "UYHHeAjgcTlljSjJ",
+      "ciphertext": "Inb0fujwuif4FCe5uaNqA+AKKG03O3eqxsuwcPy6mWdCnIfNFXBGJWZZv4eSD99dCnJhkIOmL0LfeK4m+5OJAThct1LfLYYdOQDsMgVBiA8Z4Iso4kfa1XbkXxD/WwqJWJWXXupDpst/oUboJxlgANcOAPmFZ6sIDCCQCbJgYjMP3p8uaaa5y0IRMBzfw46iSBYNb3mpjtjJfka6xgl4r6mIMBWOLRH9Q11cTG+i2bqRQp18wcWtF+9uKa1kVT5mG/o3msETxU5YJFOn06H1yJXZE9aBIANKw6MzvJUPdJX9iTjsZQeAuOH7fvbMCAjBxg4vqdTqJBjpRQMtyXAowm6hPe/RW3a+HT2UnHEXYrD0GL8zzhNNyNAVclLy0p637jubRf5sT/6S4HQQ5xHC4bYg9bVMSYr+CUEB6mg69D1nlTWYUKaosL7yn2SeRiqqhxO/paE32957YoN4tflW+c0qmXIrBp55Xb03oSYMnVS9vZsogcoJhTyBwTqxaUJNFOD5esNofg8ZPGBIUKDiKc0hAt2ZeJXQDi4jAczc23De2PDzh5WTbvVofCcQ5oQ7UFPHmvNk7Fb1CMBGJvLgiccBuZ20WJes8XgLpw47L5qPlqpfbBFwtP9JmAc7PNAcbF7zdbtgzVxWhxD+Kg90uGl35yKGZbvZOfk35qGHcA6LOjVM/OLCfiwYmnPTfw=="
+    }
+  },
+  "signature": "v3sj5gpvfTDCRN7eSaqMgmTdDDoqIBLIRtP2QliwGRdLJNK5UcVmuM5c2Yie3c0OqQ0K53jBHVD6uP8ekF7VCw=="
+}
