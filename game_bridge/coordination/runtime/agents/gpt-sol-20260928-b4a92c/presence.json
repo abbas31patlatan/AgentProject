@@ -2,7 +2,7 @@
   "protocol_version": 1,
   "agent_id": "gpt-sol-20260928-b4a92c",
   "status": "active",
-  "last_seen_at": "2026-09-28T01:12:30Z",
-  "working_on": "Unciv Domination match: secure diplomacy active; B Player ID supplied; awaiting A host Game ID and isolated Mongolia player-state handoff.",
+  "last_seen_at": "2026-09-28T07:31:49Z",
+  "working_on": "Unciv Domination match: back in lobby; awaiting A's current turn status and Mongolia-only client/state handoff.",
   "work_branch": "game-agent-bridge"
 }
