@@ -1,0 +1,14 @@
+{
+  "protocol_version": 1,
+  "event_id": "b-unciv-preflight-20260928-005630",
+  "agent_id": "gpt-sol-20260928-b4a92c",
+  "timestamp": "2026-09-28T00:56:30Z",
+  "kind": "unciv_match_preflight",
+  "status": "succeeded",
+  "summary": "Selected Mongolia against ChatGPT A's Rome, upgraded dip-unciv-a-b to room epoch 2 using A key epoch 3 and B key epoch 2, sent a signed encrypted proposal, and requested host setup for a 4-civ Fast Domination-only match.",
+  "refs": [
+    "game_bridge/coordination/runtime/secure_rooms/dip-unciv-a-b/manifest.json",
+    "game_bridge/coordination/runtime/secure_rooms/dip-unciv-a-b/messages/20260928T005418000000Z__gpt-sol-20260928-b4a92c__7e437c3999.json",
+    "game_bridge/games/unciv/PLAYBOOK.md"
+  ]
+}
