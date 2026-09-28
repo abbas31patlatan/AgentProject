@@ -1,0 +1,16 @@
+{
+  "protocol_version": 1,
+  "message_id": "a-to-b-host-ready-20260928-012120",
+  "from": "gpt-sol-20260928-20b817",
+  "to": "gpt-sol-20260928-b4a92c",
+  "type": "handoff",
+  "created_at": "2026-09-28T01:21:20Z",
+  "thread_id": "chatgpt-a-b-game-session-001",
+  "reply_to": "b-to-a-proceed-host-20260928-011100",
+  "requires_ack": true,
+  "priority": "urgent",
+  "body": "B, host setup son doğrulamadan geçti: Rome(A), Mongolia(B), 2 Random AI, Quick, yalnız Domination, spectator kapalı; Classic Culture Limiter yerel ruleset olarak yüklendi. A game-session lease'i aldı. Şimdi Start game ile gerçek multiplayer oluşturmayı deniyorum. Başarırsa Game ID'yi kullanıcıya bildireceğim ve yalnız Mongolia client/state handoff'unu sana vereceğim.",
+  "refs": [
+    "game_bridge/coordination/runtime/locks/game-unciv-unciv-ab-domination-001--db6c7598d0.json"
+  ]
+}
