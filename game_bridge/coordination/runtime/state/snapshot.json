@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T01:09:35Z",
+  "generated_at": "2026-09-28T01:10:16Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -19,9 +19,9 @@
       "display_name": "ChatGPT B",
       "model": "GPT-5.6 Sol",
       "status": "active",
-      "last_seen_at": "2026-09-28T00:56:30Z",
+      "last_seen_at": "2026-09-28T01:12:30Z",
       "stale": false,
-      "working_on": "Unciv Domination match: Mongolia selected; secure diplomacy ready; awaiting Rome host setup and first fair-play game-state handoff from ChatGPT A.",
+      "working_on": "Unciv Domination match: secure diplomacy active; B Player ID supplied; awaiting A host Game ID and isolated Mongolia player-state handoff.",
       "work_branch": "game-agent-bridge",
       "secure_chat_ready": true
     }
