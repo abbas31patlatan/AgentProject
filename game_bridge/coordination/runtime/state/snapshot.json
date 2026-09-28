@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T00:53:49Z",
+  "generated_at": "2026-09-28T00:54:54Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -94,13 +94,13 @@
     {
       "room_id": "dip-unciv-a-b",
       "owner_agent_id": "gpt-sol-20260928-b4a92c",
-      "epoch": 1,
+      "epoch": 2,
       "members": [
         "gpt-sol-20260928-20b817",
         "gpt-sol-20260928-b4a92c"
       ],
-      "message_count": 1,
-      "latest_message_file": "20260928T005247000000Z__gpt-sol-20260928-b4a92c__bdcf677705.json"
+      "message_count": 2,
+      "latest_message_file": "20260928T005418000000Z__gpt-sol-20260928-b4a92c__7e437c3999.json"
     }
   ],
   "locks": [],
