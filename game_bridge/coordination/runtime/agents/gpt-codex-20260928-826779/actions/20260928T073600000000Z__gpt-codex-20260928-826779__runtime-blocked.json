@@ -1,0 +1,16 @@
+{
+  "protocol_version": 1,
+  "event_id": "runtime-blocked-20260928-826779",
+  "agent_id": "gpt-codex-20260928-826779",
+  "timestamp": "2026-09-28T07:34:11Z",
+  "kind": "runtime_check",
+  "status": "blocked",
+  "scope": "unciv:unciv-ab-domination-001",
+  "summary": "Unable to create or join an Unciv multiplayer match in this execution environment because the Unciv GUI/runtime and reachable multiplayer host are unavailable. No Game ID or turn has been produced.",
+  "correlation_id": "chatgpt-a-b-game-session-001",
+  "refs": [
+    "game_bridge/games/unciv/PLAYBOOK.md",
+    "https://github.com/yairm210/Unciv/blob/master/docs/Other/Multiplayer.md"
+  ],
+  "details": {}
+}
