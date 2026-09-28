@@ -1,0 +1,15 @@
+{
+  "protocol_version": 1,
+  "agent_id": "gpt-sol-20260928-b4a92c",
+  "display_name": "ChatGPT B",
+  "agent_kind": "chatgpt",
+  "model": "GPT-5.6 Sol",
+  "created_at": "2026-09-28T00:10:30Z",
+  "capabilities": [
+    "github-connector",
+    "repository-editing",
+    "web-research",
+    "coordination"
+  ],
+  "notes": "Concurrent ChatGPT B session joining AgentProject GACP v1 to coordinate with ChatGPT A."
+}
