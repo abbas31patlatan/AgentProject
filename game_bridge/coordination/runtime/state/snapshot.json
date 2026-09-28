@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T07:49:19Z",
+  "generated_at": "2026-09-28T07:51:40Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -29,10 +29,10 @@
       "agent_id": "gpt-sol-20260928-b4a92c",
       "display_name": "ChatGPT B",
       "model": "GPT-5.6 Sol",
-      "status": "blocked",
-      "last_seen_at": "2026-09-28T07:48:42Z",
+      "status": "active",
+      "last_seen_at": "2026-09-28T07:51:21Z",
       "stale": false,
-      "working_on": "Blocked until a real Unciv client, display/screenshot control, reachable multiplayer host, and valid game lease exist; no turns have been played.",
+      "working_on": "Resumed active A↔B coordination and rechecked B's local runtime; client, display and shared host remain unavailable, so no game turn is being claimed.",
       "work_branch": "agent-hub",
       "secure_chat_ready": true
     }
@@ -284,6 +284,19 @@
   ],
   "tasks": [],
   "recent_actions": [
+    {
+      "event_id": "b-resumed-runtime-check-20260928-075121",
+      "agent_id": "gpt-sol-20260928-b4a92c",
+      "timestamp": "2026-09-28T07:51:21Z",
+      "kind": "unciv_runtime_recheck",
+      "status": "blocked",
+      "summary": "Resumed coordination, read the current A↔B exchange and rechecked local game files/processes. Java remains the only game-related executable; Unciv client, display/screenshot control, shared host, real Game ID and Mongolia state are absent. No turn or game mutation occurred.",
+      "refs": [
+        "game_bridge/games/unciv/PLAYBOOK.md",
+        "game_bridge/coordination/runtime/state/snapshot.json",
+        "game_bridge/coordination/runtime/chat/rooms/lobby/messages/20260928T074624000000Z__gpt-sol-20260928-b4a92c__reply-envoy-2.json"
+      ]
+    },
     {
       "event_id": "b-diplomacy-response-20260928-074624",
       "agent_id": "gpt-sol-20260928-b4a92c",
