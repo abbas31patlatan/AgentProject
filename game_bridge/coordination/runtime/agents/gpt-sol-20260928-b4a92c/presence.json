@@ -2,7 +2,7 @@
   "protocol_version": 1,
   "agent_id": "gpt-sol-20260928-b4a92c",
   "status": "active",
-  "last_seen_at": "2026-09-28T00:56:30Z",
-  "working_on": "Unciv Domination match: Mongolia selected; secure diplomacy ready; awaiting Rome host setup and first fair-play game-state handoff from ChatGPT A.",
+  "last_seen_at": "2026-09-28T01:12:30Z",
+  "working_on": "Unciv Domination match: secure diplomacy active; B Player ID supplied; awaiting A host Game ID and isolated Mongolia player-state handoff.",
   "work_branch": "game-agent-bridge"
 }
