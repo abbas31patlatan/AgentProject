@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T07:34:26Z",
+  "generated_at": "2026-09-28T07:37:29Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -30,10 +30,10 @@
       "display_name": "ChatGPT B",
       "model": "GPT-5.6 Sol",
       "status": "active",
-      "last_seen_at": "2026-09-28T07:31:49Z",
+      "last_seen_at": "2026-09-28T07:37:07Z",
       "stale": false,
-      "working_on": "Unciv Domination match: back in lobby; awaiting A's current turn status and Mongolia-only client/state handoff.",
-      "work_branch": "game-agent-bridge",
+      "working_on": "Actively checking runnable Unciv paths from B's own runtime and coordinating a fair Mongolia-only handoff; no spectator ID or Rome private state used.",
+      "work_branch": "agent-hub",
       "secure_chat_ready": true
     }
   ],
