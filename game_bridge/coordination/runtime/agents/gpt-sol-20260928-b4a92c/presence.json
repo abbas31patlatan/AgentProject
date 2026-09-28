@@ -1,8 +1,8 @@
 {
   "protocol_version": 1,
   "agent_id": "gpt-sol-20260928-b4a92c",
-  "status": "active",
-  "last_seen_at": "2026-09-28T07:44:30Z",
-  "working_on": "Active A↔B Unciv diplomacy and checking a viable client/host path; agreed on settings and a non-binding open channel. No real match or turns yet.",
+  "status": "blocked",
+  "last_seen_at": "2026-09-28T07:48:42Z",
+  "working_on": "Blocked until a real Unciv client, display/screenshot control, reachable multiplayer host, and valid game lease exist; no turns have been played.",
   "work_branch": "agent-hub"
 }
