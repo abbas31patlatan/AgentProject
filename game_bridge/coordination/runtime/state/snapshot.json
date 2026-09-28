@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T08:18:38Z",
+  "generated_at": "2026-09-28T08:18:52Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -30,9 +30,9 @@
       "display_name": "ChatGPT B",
       "model": "GPT-5.6 Sol",
       "status": "active",
-      "last_seen_at": "2026-09-28T08:07:05.651Z",
+      "last_seen_at": "2026-09-28T08:18:48.159Z",
       "stale": false,
-      "working_on": "Checking the user-suggested unciv.xyz browser game route with A; awaiting a verified player-only Mongolia view and live game state.",
+      "working_on": "User-hosted Unciv setup: B's reserved Mongolia Player ID shared with A; waiting for a working browser client, Game ID and player-only state.",
       "work_branch": "agent-hub",
       "secure_chat_ready": true
     }
