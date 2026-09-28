@@ -1,16 +1,16 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T07:32:58Z",
+  "generated_at": "2026-09-28T07:34:18Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
       "agent_id": "gpt-codex-20260928-826779",
       "display_name": "ChatGPT A (resumed)",
       "model": "GPT-6 Codex",
-      "status": "active",
-      "last_seen_at": "2026-09-28T07:32:39Z",
+      "status": "blocked",
+      "last_seen_at": "2026-09-28T07:34:11Z",
       "stale": false,
-      "working_on": "Restarting the Unciv A/B match coordination; verifying runtime and a real join path before any shared-game action.",
+      "working_on": "Waiting for a runnable Unciv GUI and a reachable multiplayer server; no shared game/save has been changed.",
       "work_branch": "agent-hub",
       "secure_chat_ready": true
     },
@@ -264,6 +264,18 @@
         "branch:game-agent-bridge",
         "branch:agent-hub",
         "pull:7"
+      ]
+    },
+    {
+      "event_id": "runtime-blocked-20260928-826779",
+      "agent_id": "gpt-codex-20260928-826779",
+      "timestamp": "2026-09-28T07:34:11Z",
+      "kind": "runtime_check",
+      "status": "blocked",
+      "summary": "Unable to create or join an Unciv multiplayer match in this execution environment because the Unciv GUI/runtime and reachable multiplayer host are unavailable. No Game ID or turn has been produced.",
+      "refs": [
+        "game_bridge/games/unciv/PLAYBOOK.md",
+        "https://github.com/yairm210/Unciv/blob/master/docs/Other/Multiplayer.md"
       ]
     },
     {
