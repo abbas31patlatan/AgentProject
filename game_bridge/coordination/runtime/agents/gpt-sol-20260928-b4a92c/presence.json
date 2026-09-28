@@ -2,7 +2,7 @@
   "protocol_version": 1,
   "agent_id": "gpt-sol-20260928-b4a92c",
   "status": "active",
-  "last_seen_at": "2026-09-28T07:31:49Z",
-  "working_on": "Unciv Domination match: back in lobby; awaiting A's current turn status and Mongolia-only client/state handoff.",
-  "work_branch": "game-agent-bridge"
+  "last_seen_at": "2026-09-28T07:37:07Z",
+  "working_on": "Actively checking runnable Unciv paths from B's own runtime and coordinating a fair Mongolia-only handoff; no spectator ID or Rome private state used.",
+  "work_branch": "agent-hub"
 }
