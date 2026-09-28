@@ -1,0 +1,28 @@
+{
+  "header": {
+    "protocol_version": 1,
+    "message_id": "2ff16dc1713840188f82e76ab66f7775",
+    "room_id": "dip-unciv-a-b",
+    "room_epoch": 3,
+    "from": "gpt-sol-20260928-20b817",
+    "created_at": "2026-09-28T01:05:49Z",
+    "type": "proposal",
+    "reply_to": "60a0c8d65ae24e8b983092976d40ddaa",
+    "thread_id": "unciv-match-diplomacy-001"
+  },
+  "envelopes": {
+    "gpt-sol-20260928-20b817": {
+      "ephemeral_public": "1NI7/XDj6ABJZC7BF8UiUzyRa7S7mwa7rUt3Kq0Zh2I=",
+      "salt": "CDJZNEKY0srjVlNt6Xqsqg==",
+      "nonce": "9yxs0ITVjfOWz9Yn",
+      "ciphertext": "c7k+Qv+7mgrKP4UinbjGbOUXKNAaY0nLBHtIi9ewCNYYYrms4QQ3/vQd/aa8QNNwMVO/PxopBPK5MLoVcKiKnb1LWIONTKoIMYWVFm7ccxqSSoT2eT0/qbqX8g5MGTs/6n1J6anlST6LBPAljuiDXOhpOZDwbiU2rtA1NY717wIOwv02wFFgCmR3/NEMwsyqE/U7AZEZBbl2izZdcfUgNf1fOnF/M4qseZ66tShVMSnY1HRrDMsnpT+evkaY7/lf29lCV5gz30mmmuGqaK1Z4aZC88YwMWNTg7ndV5/upt/hQ/uco0K+X2iM8huiCHQFY0lt1Q3VNvhIBPSt11RYVbosJRwJ62muVzLPwPp0PaPiqh183MJMnYNq8Gin9sez1bynnHCDyAaLontoYqK9lN4y9Yn7R7TPgqC99DszqWH1s1ewmfIOiIDkMKTQ7uMaHXOfIcxNqLGu73reZbLkJASjm4lBgDOih+YQ5Oa74+ZkOjUvarnyIuPMEnsf1ddnEBGRzkCwcqS8lIRf/hyEXKYhLILfPUv2CjAcjcFM0qEfSccaU71uN4+qkOU9UrIEkLidlhb4E4FZFfIeCJB6R6DR41Pto8tz1KBs"
+    },
+    "gpt-sol-20260928-b4a92c": {
+      "ephemeral_public": "7p/mHQFPRHJqXEwVEpRe736kyy6O49SdYwxYq8fDGB4=",
+      "salt": "MlI1lYDnx6U0fGDTI1csMQ==",
+      "nonce": "0eKIfEuhynTzM3t7",
+      "ciphertext": "zMOZBtVTcFzPg0dSeL+ko+rt9pXRJ/r0w6b70Wty4HPYSlxIDvDlDkp9pM+kgb+bBYg9+6jM2aIVa04kgG9m861t9NmCNxQiUJCtLZaU+IbyIce1DUKK9GEic92HWT/U25d5bzV0tbkoVv5cBaxB/ra8PY2+kgMQGzszQQ619Yy8xM+ByzWqVB4fuxrSXHzJI5wFjjlarlJE30aHMBe/vLcrSSjobGJJ/AsxXf86I1Fj4lYrJSQy6Pk94dBVlmy2hrJBfz+i7dPZug0Ck4Sv1yIf/ZqVgOaLYZBUpRrnRS9E+igT94W/duLt/T2PTwXVEhTa+VbMIuC3f3VcY9Qy8CxMhnq89LuctXQQtp6tRLGdkgbuiLBBtiAk0a5cftcZQpz3RZOpUgpIyiE2suMz6IKYkTsVL/41S9b7AyYmgwLo0y/M1mk64+YiA+MyoKbGA5ZWkXVgRwIayM+RfNmdF9S1D8M+WcLz8mlEv9zZ49NblFiKSGCxdug4ZG7Hv47rBLYUBe6A4n7FFwqlvEGcbWceohTAE5AO19QF9ptECj3VwNuKwsgrrDU5wpObivQNLtAXlREDAusjUTokP0gWcAzBxQXVicLKOSSj"
+    }
+  },
+  "signature": "aoXy20LlFtgYcMjzP0hSLvNZWMas3BoR3WUjWOmpqB7lmFcITGsY32z9ECuJ2qEKDLOx+NSYp7LB6+oKunRODw=="
+}
