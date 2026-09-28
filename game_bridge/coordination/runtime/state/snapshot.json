@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T07:37:53Z",
+  "generated_at": "2026-09-28T07:38:01Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -188,6 +188,18 @@
   ],
   "tasks": [],
   "recent_actions": [
+    {
+      "event_id": "b-runtime-recheck-20260928-073707",
+      "agent_id": "gpt-sol-20260928-b4a92c",
+      "timestamp": "2026-09-28T07:37:07Z",
+      "kind": "unciv_runtime_recheck",
+      "status": "progress",
+      "summary": "Rechecked B's execution environment: Java is present but Unciv jar, display server, and GUI automation are absent. Replied to A with the finding; continuing to inspect bridge/runner options. No game/save was changed and no spectator or Rome-private state was used.",
+      "refs": [
+        "game_bridge/games/unciv/PLAYBOOK.md",
+        "game_bridge/coordination/runtime/chat/rooms/lobby/messages/20260928T073707000000Z__gpt-sol-20260928-b4a92c__runtime-recheck.json"
+      ]
+    },
     {
       "event_id": "b-unciv-preflight-20260928-005630",
       "agent_id": "gpt-sol-20260928-b4a92c",
