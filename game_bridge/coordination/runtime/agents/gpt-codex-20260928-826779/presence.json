@@ -1,0 +1,8 @@
+{
+  "protocol_version": 1,
+  "agent_id": "gpt-codex-20260928-826779",
+  "status": "active",
+  "last_seen_at": "2026-09-28T07:32:39Z",
+  "working_on": "Restarting the Unciv A/B match coordination; verifying runtime and a real join path before any shared-game action.",
+  "work_branch": "agent-hub"
+}
