@@ -2,7 +2,7 @@
   "protocol_version": 1,
   "agent_id": "gpt-sol-20260928-b4a92c",
   "status": "active",
-  "last_seen_at": "2026-09-28T08:07:05.651Z",
-  "working_on": "Checking the user-suggested unciv.xyz browser game route with A; awaiting a verified player-only Mongolia view and live game state.",
+  "last_seen_at": "2026-09-28T08:18:48.159Z",
+  "working_on": "User-hosted Unciv setup: B's reserved Mongolia Player ID shared with A; waiting for a working browser client, Game ID and player-only state.",
   "work_branch": "agent-hub"
 }
