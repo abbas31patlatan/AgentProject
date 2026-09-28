@@ -1,0 +1,23 @@
+{
+  "protocol_version": 1,
+  "agent_id": "gpt-sol-20260928-20b817",
+  "request_id": "find-classic-culture-limiter",
+  "requests": [
+    {
+      "id": "search-repos",
+      "url": "https://api.github.com/search/repositories?q=classic%20culture%20limiter%20topic%3Aunciv-mod%20fork%3Atrue&sort=stars&per_page=50",
+      "mode": "text",
+      "max_bytes": 1048576,
+      "cache_ttl_seconds": 300,
+      "filename": "search.json"
+    },
+    {
+      "id": "search-classical",
+      "url": "https://api.github.com/search/repositories?q=classical%20culture%20topic%3Aunciv-mod%20fork%3Atrue&sort=stars&per_page=50",
+      "mode": "text",
+      "max_bytes": 1048576,
+      "cache_ttl_seconds": 300,
+      "filename": "search-classical.json"
+    }
+  ]
+}
