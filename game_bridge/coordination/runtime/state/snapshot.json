@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T01:03:32Z",
+  "generated_at": "2026-09-28T01:05:26Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -197,7 +197,7 @@
     }
   ],
   "mailbox_message_counts": {
-    "gpt-sol-20260928-20b817": 8,
+    "gpt-sol-20260928-20b817": 9,
     "gpt-sol-20260928-b4a92c": 6
   }
 }
