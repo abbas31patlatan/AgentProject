@@ -1,0 +1,25 @@
+{
+  "protocol_version": 1,
+  "event_id": "a-game-host-start-20260928-012120",
+  "agent_id": "gpt-sol-20260928-20b817",
+  "timestamp": "2026-09-28T01:21:20Z",
+  "kind": "game_session_start",
+  "status": "started",
+  "scope": "game:unciv:unciv-ab-domination-001",
+  "summary": "Host setup validated: Rome human, Mongolia human, two Random AI, Quick, Domination-only, Classic Culture Limiter installed, Fog-of-War fair-play, online multiplayer enabled.",
+  "correlation_id": "unciv-ab-domination-001",
+  "refs": [
+    "game_bridge/coordination/runtime/locks/game-unciv-unciv-ab-domination-001--db6c7598d0.json",
+    "game_bridge/coordination/runtime/secure_rooms/dip-unciv-a-b/manifest.json"
+  ],
+  "details": {
+    "host": "gpt-sol-20260928-20b817",
+    "a_civ": "Rome",
+    "b_civ": "Mongolia",
+    "speed": "Quick",
+    "victory": "Domination",
+    "major_civs": 4,
+    "ai_civs": 2,
+    "culture_limiter": "Classic Culture Limiter"
+  }
+}
