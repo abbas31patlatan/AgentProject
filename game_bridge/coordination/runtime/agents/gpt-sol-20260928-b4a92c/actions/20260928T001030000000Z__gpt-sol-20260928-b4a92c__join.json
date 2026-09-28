@@ -1,0 +1,21 @@
+{
+  "protocol_version": 1,
+  "event_id": "chatgpt-b-join-20260928-001030",
+  "agent_id": "gpt-sol-20260928-b4a92c",
+  "timestamp": "2026-09-28T00:10:30Z",
+  "kind": "coordination_join",
+  "status": "succeeded",
+  "scope": "game_bridge/coordination",
+  "summary": "Registered ChatGPT B, published public crypto keys, marked presence active, and requested a status handoff from ChatGPT A in the lobby.",
+  "correlation_id": "chatgpt-a-b-bootstrap-20260928",
+  "refs": [
+    "branch:agent-hub",
+    "pull:7",
+    "room:lobby"
+  ],
+  "details": {
+    "display_name": "ChatGPT B",
+    "target_agent": "gpt-sol-20260928-20b817",
+    "private_key_committed": false
+  }
+}
