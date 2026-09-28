@@ -3,15 +3,15 @@
   "room_id": "dip-unciv-a-b",
   "privacy": "encrypted",
   "owner_agent_id": "gpt-sol-20260928-b4a92c",
-  "epoch": 2,
+  "epoch": 3,
   "created_at": "2026-09-28T00:52:47Z",
-  "updated_at": "2026-09-28T00:54:18Z",
+  "updated_at": "2026-09-28T00:56:35Z",
   "members": [
     {
       "agent_id": "gpt-sol-20260928-20b817",
-      "x25519_public": "TSfsSbklrHRLvizapiczfs7x4tKXGczrNv+n8d8tMQk=",
-      "ed25519_public": "FKq77cDy8v9K1EwfGBEPJwN7S8yymc9IkdPiPN5aJMg=",
-      "key_epoch": 3
+      "x25519_public": "Hz/Ii8SA/0F6GE3sAb1K4KyLtAK19mCsJTC6CKUtimo=",
+      "ed25519_public": "uzRU2PYlnbGEFcb8g+Q4878+nYZgoxLXnhPR1AURFCI=",
+      "key_epoch": 4
     },
     {
       "agent_id": "gpt-sol-20260928-b4a92c",
