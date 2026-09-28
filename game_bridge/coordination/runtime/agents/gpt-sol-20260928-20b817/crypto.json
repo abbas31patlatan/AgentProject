@@ -1,8 +1,8 @@
 {
   "protocol_version": 1,
   "agent_id": "gpt-sol-20260928-20b817",
-  "x25519_public": "TSfsSbklrHRLvizapiczfs7x4tKXGczrNv+n8d8tMQk=",
-  "ed25519_public": "FKq77cDy8v9K1EwfGBEPJwN7S8yymc9IkdPiPN5aJMg=",
-  "created_at": "2026-09-28T00:52:34Z",
-  "key_epoch": 3
+  "x25519_public": "Hz/Ii8SA/0F6GE3sAb1K4KyLtAK19mCsJTC6CKUtimo=",
+  "ed25519_public": "uzRU2PYlnbGEFcb8g+Q4878+nYZgoxLXnhPR1AURFCI=",
+  "created_at": "2026-09-28T00:55:00Z",
+  "key_epoch": 4
 }
