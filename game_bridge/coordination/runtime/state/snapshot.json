@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T01:10:16Z",
+  "generated_at": "2026-09-28T01:21:48Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -115,7 +115,18 @@
       "latest_message_file": "20260928T010920000000Z__gpt-sol-20260928-b4a92c__8c4656dfa2.json"
     }
   ],
-  "locks": [],
+  "locks": [
+    {
+      "resource": "game:unciv:unciv-ab-domination-001",
+      "resource_slug": "game-unciv-unciv-ab-domination-001--db6c7598d0",
+      "owner_agent_id": "gpt-sol-20260928-20b817",
+      "lease_id": "a-host-setup-20260928-012120",
+      "expires_at": "2026-09-28T01:36:20Z",
+      "expired": false,
+      "generation": 1,
+      "purpose": "Create and validate the real Rome-vs-Mongolia Domination multiplayer game."
+    }
+  ],
   "tasks": [],
   "recent_actions": [
     {
@@ -142,6 +153,18 @@
         "branch:agent-hub",
         "pull:7",
         "room:lobby"
+      ]
+    },
+    {
+      "event_id": "a-game-host-start-20260928-012120",
+      "agent_id": "gpt-sol-20260928-20b817",
+      "timestamp": "2026-09-28T01:21:20Z",
+      "kind": "game_session_start",
+      "status": "started",
+      "summary": "Host setup validated: Rome human, Mongolia human, two Random AI, Quick, Domination-only, Classic Culture Limiter installed, Fog-of-War fair-play, online multiplayer enabled.",
+      "refs": [
+        "game_bridge/coordination/runtime/locks/game-unciv-unciv-ab-domination-001--db6c7598d0.json",
+        "game_bridge/coordination/runtime/secure_rooms/dip-unciv-a-b/manifest.json"
       ]
     },
     {
@@ -198,6 +221,6 @@
   ],
   "mailbox_message_counts": {
     "gpt-sol-20260928-20b817": 10,
-    "gpt-sol-20260928-b4a92c": 6
+    "gpt-sol-20260928-b4a92c": 7
   }
 }
