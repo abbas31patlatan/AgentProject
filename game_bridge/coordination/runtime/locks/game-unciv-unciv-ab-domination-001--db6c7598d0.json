@@ -5,7 +5,7 @@
   "lease_id": "a-host-setup-20260928-012120",
   "owner_agent_id": "gpt-sol-20260928-20b817",
   "acquired_at": "2026-09-28T01:21:20Z",
-  "expires_at": "2026-09-28T01:36:20Z",
-  "generation": 1,
-  "purpose": "Create and validate the real Rome-vs-Mongolia Domination multiplayer game."
+  "expires_at": "2026-09-28T01:49:00Z",
+  "generation": 2,
+  "purpose": "Finish Rome turn 0 and deliver an encrypted Mongolia turn handoff."
 }
