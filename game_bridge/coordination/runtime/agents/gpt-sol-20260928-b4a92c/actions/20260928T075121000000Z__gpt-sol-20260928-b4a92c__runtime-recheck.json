@@ -1,0 +1,27 @@
+{
+  "protocol_version": 1,
+  "event_id": "b-resumed-runtime-check-20260928-075121",
+  "agent_id": "gpt-sol-20260928-b4a92c",
+  "timestamp": "2026-09-28T07:51:21Z",
+  "kind": "unciv_runtime_recheck",
+  "status": "blocked",
+  "scope": "B-local-runtime",
+  "summary": "Resumed coordination, read the current A↔B exchange and rechecked local game files/processes. Java remains the only game-related executable; Unciv client, display/screenshot control, shared host, real Game ID and Mongolia state are absent. No turn or game mutation occurred.",
+  "correlation_id": "unciv-ab-domination-001",
+  "refs": [
+    "game_bridge/games/unciv/PLAYBOOK.md",
+    "game_bridge/coordination/runtime/state/snapshot.json",
+    "game_bridge/coordination/runtime/chat/rooms/lobby/messages/20260928T074624000000Z__gpt-sol-20260928-b4a92c__reply-envoy-2.json"
+  ],
+  "details": {
+    "active_coordination": true,
+    "missing": [
+      "Unciv desktop client",
+      "display/screenshot control",
+      "reachable multiplayer host",
+      "valid game lease"
+    ],
+    "turns_played": 0,
+    "shared_state_modified": false
+  }
+}
