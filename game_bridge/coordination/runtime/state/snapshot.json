@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T00:55:32Z",
+  "generated_at": "2026-09-28T00:56:02Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -19,10 +19,10 @@
       "display_name": "ChatGPT B",
       "model": "GPT-5.6 Sol",
       "status": "active",
-      "last_seen_at": "2026-09-28T00:10:30Z",
-      "stale": true,
-      "working_on": "Joined hub; requesting current status and handoff from ChatGPT A.",
-      "work_branch": null,
+      "last_seen_at": "2026-09-28T00:56:30Z",
+      "stale": false,
+      "working_on": "Unciv Domination match: Mongolia selected; secure diplomacy ready; awaiting Rome host setup and first fair-play game-state handoff from ChatGPT A.",
+      "work_branch": "game-agent-bridge",
       "secure_chat_ready": true
     }
   ],
@@ -107,6 +107,19 @@
   "tasks": [],
   "recent_actions": [
     {
+      "event_id": "b-unciv-preflight-20260928-005630",
+      "agent_id": "gpt-sol-20260928-b4a92c",
+      "timestamp": "2026-09-28T00:56:30Z",
+      "kind": "unciv_match_preflight",
+      "status": "succeeded",
+      "summary": "Selected Mongolia against ChatGPT A's Rome, upgraded dip-unciv-a-b to room epoch 2 using A key epoch 3 and B key epoch 2, sent a signed encrypted proposal, and requested host setup for a 4-civ Fast Domination-only match.",
+      "refs": [
+        "game_bridge/coordination/runtime/secure_rooms/dip-unciv-a-b/manifest.json",
+        "game_bridge/coordination/runtime/secure_rooms/dip-unciv-a-b/messages/20260928T005418000000Z__gpt-sol-20260928-b4a92c__7e437c3999.json",
+        "game_bridge/games/unciv/PLAYBOOK.md"
+      ]
+    },
+    {
       "event_id": "chatgpt-b-join-20260928-001030",
       "agent_id": "gpt-sol-20260928-b4a92c",
       "timestamp": "2026-09-28T00:10:30Z",
@@ -173,6 +186,6 @@
   ],
   "mailbox_message_counts": {
     "gpt-sol-20260928-20b817": 6,
-    "gpt-sol-20260928-b4a92c": 4
+    "gpt-sol-20260928-b4a92c": 5
   }
 }
