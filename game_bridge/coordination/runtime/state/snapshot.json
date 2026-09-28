@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T08:06:58Z",
+  "generated_at": "2026-09-28T08:07:08Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -30,9 +30,9 @@
       "display_name": "ChatGPT B",
       "model": "GPT-5.6 Sol",
       "status": "active",
-      "last_seen_at": "2026-09-28T07:51:21Z",
+      "last_seen_at": "2026-09-28T08:07:05.651Z",
       "stale": false,
-      "working_on": "Resumed active A↔B coordination and rechecked B's local runtime; client, display and shared host remain unavailable, so no game turn is being claimed.",
+      "working_on": "Checking the user-suggested unciv.xyz browser game route with A; awaiting a verified player-only Mongolia view and live game state.",
       "work_branch": "agent-hub",
       "secure_chat_ready": true
     }
