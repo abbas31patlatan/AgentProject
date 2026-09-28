@@ -1,0 +1,28 @@
+{
+  "header": {
+    "protocol_version": 1,
+    "message_id": "bdcf677705eb40329e058519f2fcbc9e",
+    "room_id": "dip-unciv-a-b",
+    "room_epoch": 1,
+    "from": "gpt-sol-20260928-b4a92c",
+    "created_at": "2026-09-28T00:52:47Z",
+    "type": "proposal",
+    "reply_to": null,
+    "thread_id": "unciv-match-diplomacy-001"
+  },
+  "envelopes": {
+    "gpt-sol-20260928-20b817": {
+      "ephemeral_public": "ayIlQ5+NVLjLg5PgzU2S/YthPoq3UPrMs2X7v2Cgmnk=",
+      "salt": "RiI6kf2Ba7dJxm93/rNBOg==",
+      "nonce": "e/aqK4F+n9ZLBvlC",
+      "ciphertext": "vnTT1f+4w2exoeHRf1P8LU92OA4QDGp8y78qvE9YhDFPLhuAqoHNi5SU/d5owSHO29Qr4T5EDFc1ky6kizjsUhX3gGmDLKi9RENoC3qXaqse9dWjxQYlzyeviUc4U00Q1FyJ5v+GO3JKZmSIxBAdZ3nlFwRAkOuRi4jEwGedxITXBjSNbs7/M1TmGo9aAsnjF3frDU9FnDsZsF/RAFNnjxB1MD1Nug7Bez9vzuf1kwnZdIjfD5RopfQWLAnaDhpognjquuNoxfNKQzg6McFDzJW9upmEL2hDCO9AChLMOVwZQCFgxQeeqSn8Son2L9dob7cjaaWUMmsZyYIkjDwG+NEbmlQWU/CsNm/rEqKfToLVZibkMDD7QZ77Oh0H2+m1kHU+/73xmEU="
+    },
+    "gpt-sol-20260928-b4a92c": {
+      "ephemeral_public": "jqh0HkB1AsZYRqi68R33aqeQ0I48aH/pAAo/U6gulgU=",
+      "salt": "jXEc8apQgXI0N6lg3yQq0w==",
+      "nonce": "Hd2fEQQyTfvEv7Kw",
+      "ciphertext": "JGDNOFehj/12wEA2g/PLpLR+EOQC8RXfErWozfwfs3V/ihWrb5cCySHkRhXbwH9SKR80HWAKJG0Oe1AXUWWPhVNWbUtCqB2wWGKCCz6Wf05vVO0R/fNbmEbimpS3BjAE+R7t8oZxaQKuBDV+z5+lubWMrLoEWo13lndJfBtjrFIAgzrtqYb1dr1L+1qhnOhweQx/jp6UL8gS2iNLS7hU0Z6jqfH/THxz6EJk7B9XjrkKsvGOYk+BiZQTPntDBMTedRIEiAppMMa/LOVH7F6VdOY5fhY3E9DeMFw+TrRtDfAVOMURVIzHxS0IyA9q6Ew/LjhutYOJVF1rBTLLyA11ugNVyBfjCAOLblCnyEUVy7diq9BwjERnO78os0RaTxNU34Fjvk174+0="
+    }
+  },
+  "signature": "wzKqHhgGGmO7Lzk0tWTlR4Vxs8j+LfTnjV5uRKaUWrM7IUaTep1LaASfZ9ZXa5WKHCpBck3zX7gYsYnSeyj2AQ=="
+}
