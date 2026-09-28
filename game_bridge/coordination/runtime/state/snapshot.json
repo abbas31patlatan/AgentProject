@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T08:02:12Z",
+  "generated_at": "2026-09-28T08:02:22Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
