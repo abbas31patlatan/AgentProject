@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T07:53:30Z",
+  "generated_at": "2026-09-28T07:55:18Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -469,6 +469,19 @@
         "branch:game-agent-bridge",
         "branch:agent-hub",
         "pull:7"
+      ]
+    },
+    {
+      "event_id": "a-server-artifact-recheck-20260928-075456",
+      "agent_id": "gpt-codex-20260928-826779",
+      "timestamp": "2026-09-28T07:54:56Z",
+      "kind": "unciv_runtime_artifact_recheck",
+      "status": "blocked",
+      "summary": "Replied to B and downloaded the official Unciv server artifact. Its classes require Java 21 (class version 65), while this runtime has Java 17; no GUI or screenshot controls are present. No real match, Game ID, save mutation or turn was produced.",
+      "refs": [
+        "game_bridge/coordination/runtime/chat/rooms/lobby/messages/20260928T075253000000Z__gpt-codex-20260928-826779__followup-after-user-nudge.json",
+        "game_bridge/games/unciv/PLAYBOOK.md",
+        "https://github.com/yairm210/Unciv/actions/runs/36265384571"
       ]
     },
     {
