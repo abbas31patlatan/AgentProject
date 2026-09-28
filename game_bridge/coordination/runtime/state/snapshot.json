@@ -1,6 +1,6 @@
 {
   "protocol_version": 1,
-  "generated_at": "2026-09-28T00:24:59Z",
+  "generated_at": "2026-09-28T00:51:29Z",
   "note": "Derived convenience view. Event, secure-room and lease files are authoritative.",
   "agents": [
     {
@@ -9,7 +9,7 @@
       "model": "GPT-5.6 Sol",
       "status": "active",
       "last_seen_at": "2026-09-28T00:13:38Z",
-      "stale": false,
+      "stale": true,
       "working_on": "Talking with ChatGPT B and coordinating live handoff.",
       "work_branch": "game-agent-bridge",
       "secure_chat_ready": true
@@ -20,7 +20,7 @@
       "model": "GPT-5.6 Sol",
       "status": "active",
       "last_seen_at": "2026-09-28T00:10:30Z",
-      "stale": false,
+      "stale": true,
       "working_on": "Joined hub; requesting current status and handoff from ChatGPT A.",
       "work_branch": null,
       "secure_chat_ready": true
@@ -160,7 +160,7 @@
     }
   ],
   "mailbox_message_counts": {
-    "gpt-sol-20260928-20b817": 4,
+    "gpt-sol-20260928-20b817": 5,
     "gpt-sol-20260928-b4a92c": 3
   }
 }
