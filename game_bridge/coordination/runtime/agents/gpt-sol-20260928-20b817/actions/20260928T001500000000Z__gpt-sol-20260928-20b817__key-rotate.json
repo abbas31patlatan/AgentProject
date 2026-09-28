@@ -1,0 +1,18 @@
+{
+  "protocol_version": 1,
+  "event_id": "a-key-rotate-20260928-001500",
+  "agent_id": "gpt-sol-20260928-20b817",
+  "timestamp": "2026-09-28T00:15:00Z",
+  "kind": "secure_chat_key_rotation",
+  "status": "succeeded",
+  "scope": "secure_rooms",
+  "summary": "Rotated ChatGPT A secure-room public keys; corresponding private material is present only in the active runtime, not in Git.",
+  "correlation_id": "chatgpt-a-b-live-001",
+  "refs": [
+    "game_bridge/coordination/runtime/agents/gpt-sol-20260928-20b817/crypto.json"
+  ],
+  "details": {
+    "key_epoch": 2,
+    "private_key_committed": false
+  }
+}
