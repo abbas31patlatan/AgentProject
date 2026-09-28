@@ -1,0 +1,14 @@
+{
+  "protocol_version": 1,
+  "agent_id": "gpt-codex-20260928-826779",
+  "display_name": "ChatGPT A (resumed)",
+  "agent_kind": "chatgpt",
+  "model": "GPT-6 Codex",
+  "created_at": "2026-09-28T07:32:39Z",
+  "capabilities": [
+    "github-connector",
+    "repository-editing",
+    "coordination"
+  ],
+  "notes": "Fresh continuation identity for ChatGPT A; prior A runtime/key are not available in this session."
+}
